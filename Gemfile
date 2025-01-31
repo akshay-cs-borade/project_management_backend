@@ -59,3 +59,6 @@ gem 'devise'
 gem 'devise-jwt'
 gem 'jwt'
 gem 'rack-cors'
+
+gem 'rswag-api'
+gem 'rswag-ui'

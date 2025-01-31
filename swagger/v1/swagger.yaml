@@ -1,0 +1,455 @@
+openapi: 3.0.0
+info:
+  title: User Authentication API
+  description: API for user authentication and user data retrieval
+  version: 1.0.0
+paths:
+  /users/sign_in:
+    post:
+      summary: User Sign In
+      description: Authenticates a user and returns a session token.
+      operationId: signInUser
+      tags:
+        - Authentication
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                user:
+                  type: object
+                  properties:
+                    email:
+                      type: string
+                      format: email
+                      example: user@example.com
+                    password:
+                      type: string
+                      format: password
+                      example: password
+      responses:
+        '200':
+          description: Successfully authenticated
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  token:
+                    type: string
+                    example: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+        '401':
+          description: Invalid credentials
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: "Invalid email or password"
+      security: []
+  /user/me:
+    get:
+      summary: Get User Information
+      description: Retrieves details of the authenticated user.
+      operationId: getUserInfo
+      tags:
+        - User
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successfully retrieved user information
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                    example: 2
+                  email:
+                    type: string
+                    format: email
+                    example: user@example.com
+                  name:
+                    type: string
+                    example: John Doe
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: "Invalid or expired token"
+  /user/projects:
+    get:
+      summary: Get User Projects
+      description: Retrieves a list of projects associated with the authenticated user.
+      operationId: getUserProjects
+      tags:
+        - User
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successfully retrieved user projects
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                      example: 101
+                    name:
+                      type: string
+                      example: "Project Alpha"
+                    description:
+                      type: string
+                      example: "This is a sample project."
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: "Invalid or expired token"
+  /user/tasks:
+    post:
+      summary: Create a Task
+      description: Creates a new task within a specified project.
+      operationId: createTask
+      tags:
+        - User
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                task:
+                  type: object
+                  properties:
+                    project_id:
+                      type: integer
+                      example: 2
+                    name:
+                      type: string
+                      example: "Testing a task"
+                    description:
+                      type: string
+                      example: "Test Description"
+                    duration:
+                      type: string
+                      example: "120"
+                    start_time:
+                      type: string
+                      format: date-time
+                      example: "2025-02-01T19:49"
+                    end_time:
+                      type: string
+                      format: date-time
+                      example: "2025-02-02T19:49"
+      responses:
+        '201':
+          description: Task created successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                    example: 201
+                  project_id:
+                    type: integer
+                    example: 2
+                  name:
+                    type: string
+                    example: "Testing a task"
+                  description:
+                    type: string
+                    example: "Test Description"
+                  duration:
+                    type: string
+                    example: "120"
+                  start_time:
+                    type: string
+                    format: date-time
+                    example: "2025-02-01T19:49"
+                  end_time:
+                    type: string
+                    format: date-time
+                    example: "2025-02-02T19:49"
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: "Invalid input data"
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: "Invalid or expired token"
+  /admin/active_projects:
+    get:
+      summary: Get Active Projects
+      description: Retrieves a list of active projects for the admin.
+      operationId: getActiveProjects
+      tags:
+        - Admin
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successfully retrieved active projects
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                      example: 201
+                    name:
+                      type: string
+                      example: "Project Beta"
+                    status:
+                      type: string
+                      example: "active"
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: "Invalid or expired token"
+  /admin/users:
+    get:
+      summary: Get users list
+      description: Retrieves a list of users with their details.
+      security:
+        - BearerAuth: []
+      tags:
+        - Admin
+      operationId: getUsersList    
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                    name:
+                      type: string
+                    email:
+                      type: string
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+  /projects:
+    post:
+      summary: Create a new project
+      operationId: createProject
+      tags:
+        - Projects
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: The name of the project
+                  example: "Test Project"
+                start_date:
+                  type: string
+                  format: date
+                  description: The start date of the project
+                  example: "2025-02-01"
+                duration:
+                  type: integer
+                  description: The duration of the project in months
+                  example: 12
+      responses:
+        '201':
+          description: Successfully created the project
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                    description: The ID of the created project
+                    example: 1
+                  name:
+                    type: string
+                    description: The name of the project
+                    example: "Test Project"
+                  start_date:
+                    type: string
+                    format: date
+                    description: The start date of the project
+                    example: "2025-02-01"
+                  duration:
+                    type: integer
+                    description: The duration of the project in months
+                    example: 12
+        '400':
+          description: Invalid input or missing required fields
+        '401':
+          description: Unauthorized - Invalid or missing authorization token
+        '500':
+          description: Internal Server Error
+      security:
+        - BearerAuth: []
+  /admin/update_project_users:
+    post:
+      summary: Update users for a specific project
+      operationId: updateProjectUsers
+      tags:
+        - Admin
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                user_ids:
+                  type: array
+                  items:
+                    type: integer
+                  description: List of user IDs to associate with the project
+                  example: [5, 3]
+                project_id:
+                  type: integer
+                  description: The ID of the project to update users for
+                  example: 1
+      responses:
+        '200':
+          description: Successfully updated project users
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: A success message
+                    example: "Project users updated successfully"
+        '400':
+          description: Invalid input or missing required fields
+        '401':
+          description: Unauthorized - Invalid or missing authorization token
+        '500':
+          description: Internal Server Error
+      security:
+        - BearerAuth: []
+  /admin/user_projects_and_tasks/{user_id}:
+    get:
+      summary: Get the list of projects and tasks for a specific user
+      operationId: getUserProjectsAndTasks
+      tags:
+        - Admin
+      parameters:
+        - name: user_id
+          in: path
+          required: true
+          description: ID of the user whose projects and tasks are being queried
+          schema:
+            type: integer
+          example: 5
+      responses:
+        '200':
+          description: Successfully retrieved user projects and tasks
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  user_id:
+                    type: integer
+                    description: The ID of the user
+                    example: 5
+                  projects:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        project_id:
+                          type: integer
+                          description: The ID of the project
+                          example: 1
+                        project_name:
+                          type: string
+                          description: The name of the project
+                          example: "Project Name"
+                        tasks:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              task_id:
+                                type: integer
+                                description: The ID of the task
+                                example: 101
+                              task_name:
+                                type: string
+                                description: The name of the task
+                                example: "Task Name"
+        '400':
+          description: Invalid user ID or request parameters
+        '401':
+          description: Unauthorized - Invalid or missing authorization token
+        '404':
+          description: User not found
+        '500':
+          description: Internal Server Error
+      security:
+        - BearerAuth: []                    
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT

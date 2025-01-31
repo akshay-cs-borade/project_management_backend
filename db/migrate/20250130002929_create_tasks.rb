@@ -7,7 +7,8 @@ class CreateTasks < ActiveRecord::Migration[7.1]
       t.datetime :end_time
       t.integer :duration # Duration in minutes
 
-      t.references :project, foreign_key: true
+      t.references :project
+      t.references :user
 
       t.timestamps
     end

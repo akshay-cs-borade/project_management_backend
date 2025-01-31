@@ -13,7 +13,7 @@
       <img src="./assets/0.13.1/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2025-01-31T14:00:04+05:30">2025-01-31T14:00:04+05:30</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2025-01-31T20:16:19+05:30">2025-01-31T20:16:19+05:30</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -22,14 +22,14 @@
     <span class="group_name">All Files</span>
     (<span class="covered_percent">
       <span class="green">
-  99.72%
+  99.73%
 </span>
 
      </span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.75
+         1.74
        </span>
     </span> hits/line
     )
@@ -38,15 +38,15 @@
   <a name="AllFiles"></a>
 
   <div>
-    <b>29</b> files in total.
+    <b>31</b> files in total.
   </div>
 
   <div class="t-line-summary">
-    <b>362</b> relevant lines,
-    <span class="green"><b>361</b> lines covered</span> and
+    <b>368</b> relevant lines,
+    <span class="green"><b>367</b> lines covered</span> and
     <span class="red"><b>1</b> lines missed. </span>
     (<span class="green">
-  99.72%
+  99.73%
 </span>
 )
   </div>
@@ -268,11 +268,33 @@
           </tr>
         
           <tr class="t-file">
+            <td class="strong t-file__name"><a href="#7579e0131e4f7b6af54a22fc5c64fd950303f5f5" class="src_link" title="config/initializers/rswag_api.rb">config/initializers/rswag_api.rb</a></td>
+            <td class="green strong cell--number t-file__coverage">100.00 %</td>
+            <td class="cell--number">14</td>
+            <td class="cell--number">2</td>
+            <td class="cell--number">2</td>
+            <td class="cell--number">0</td>
+            <td class="cell--number">1.00</td>
+            
+          </tr>
+        
+          <tr class="t-file">
+            <td class="strong t-file__name"><a href="#9d383d415657a122563d92692b04384b229d40cc" class="src_link" title="config/initializers/rswag_ui.rb">config/initializers/rswag_ui.rb</a></td>
+            <td class="green strong cell--number t-file__coverage">100.00 %</td>
+            <td class="cell--number">16</td>
+            <td class="cell--number">2</td>
+            <td class="cell--number">2</td>
+            <td class="cell--number">0</td>
+            <td class="cell--number">1.00</td>
+            
+          </tr>
+        
+          <tr class="t-file">
             <td class="strong t-file__name"><a href="#6a2628e47a8adfc573c5c94f7415c752438c1209" class="src_link" title="config/routes.rb">config/routes.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">25</td>
-            <td class="cell--number">13</td>
-            <td class="cell--number">13</td>
+            <td class="cell--number">27</td>
+            <td class="cell--number">15</td>
+            <td class="cell--number">15</td>
             <td class="cell--number">0</td>
             <td class="cell--number">1.00</td>
             
@@ -7973,6 +7995,376 @@
 </div>
 
       
+        <div class="source_table" id="7579e0131e4f7b6af54a22fc5c64fd950303f5f5">
+  <div class="header">
+    <h3>config/initializers/rswag_api.rb</h3>
+    <h4>
+      <span class="green">
+  100.0%
+</span>
+
+      lines covered
+    </h4>
+
+    
+
+    <div class="t-line-summary">
+      <b>2</b> relevant lines.
+      <span class="green"><b>2</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+
+    
+
+  </div>
+
+  <pre>
+    <ol>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="1">
+            
+              <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">Rswag::Api.configure do |c|</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="2">
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="3">
+            
+
+            
+
+            <code class="ruby">  # Specify a root folder where Swagger JSON files are located</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="4">
+            
+
+            
+
+            <code class="ruby">  # This is used by the Swagger middleware to serve requests for API descriptions</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="5">
+            
+
+            
+
+            <code class="ruby">  # NOTE: If you&#39;re using rswag-specs to generate Swagger, you&#39;ll need to ensure</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="6">
+            
+
+            
+
+            <code class="ruby">  # that it&#39;s configured to generate files in the same folder</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="7">
+            
+              <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  c.openapi_root = Rails.root.to_s + &#39;/swagger&#39;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="8">
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="9">
+            
+
+            
+
+            <code class="ruby">  # Inject a lambda function to alter the returned Swagger prior to serialization</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="10">
+            
+
+            
+
+            <code class="ruby">  # The function will have access to the rack env for the current request</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="11">
+            
+
+            
+
+            <code class="ruby">  # For example, you could leverage this to dynamically assign the &quot;host&quot; property</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="12">
+            
+
+            
+
+            <code class="ruby">  #</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="13">
+            
+
+            
+
+            <code class="ruby">  #c.swagger_filter = lambda { |swagger, env| swagger[&#39;host&#39;] = env[&#39;HTTP_HOST&#39;] }</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="14">
+            
+
+            
+
+            <code class="ruby">end</code>
+          </li>
+        </div>
+      
+    </ol>
+  </pre>
+</div>
+
+      
+        <div class="source_table" id="9d383d415657a122563d92692b04384b229d40cc">
+  <div class="header">
+    <h3>config/initializers/rswag_ui.rb</h3>
+    <h4>
+      <span class="green">
+  100.0%
+</span>
+
+      lines covered
+    </h4>
+
+    
+
+    <div class="t-line-summary">
+      <b>2</b> relevant lines.
+      <span class="green"><b>2</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+
+    
+
+  </div>
+
+  <pre>
+    <ol>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="1">
+            
+              <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">Rswag::Ui.configure do |c|</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="2">
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="3">
+            
+
+            
+
+            <code class="ruby">  # List the Swagger endpoints that you want to be documented through the</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="4">
+            
+
+            
+
+            <code class="ruby">  # swagger-ui. The first parameter is the path (absolute or relative to the UI</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="5">
+            
+
+            
+
+            <code class="ruby">  # host) to the corresponding endpoint and the second is a title that will be</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="6">
+            
+
+            
+
+            <code class="ruby">  # displayed in the document selector.</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="7">
+            
+
+            
+
+            <code class="ruby">  # NOTE: If you&#39;re using rspec-api to expose Swagger files</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="8">
+            
+
+            
+
+            <code class="ruby">  # (under openapi_root) as JSON or YAML endpoints, then the list below should</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="9">
+            
+
+            
+
+            <code class="ruby">  # correspond to the relative paths for those endpoints.</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="10">
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="11">
+            
+              <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  c.swagger_endpoint &#39;/api-docs/v1/swagger.yaml&#39;, &#39;API V1 Docs&#39;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="12">
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="13">
+            
+
+            
+
+            <code class="ruby">  # Add Basic Auth in case your API is private</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="14">
+            
+
+            
+
+            <code class="ruby">  # c.basic_auth_enabled = true</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="15">
+            
+
+            
+
+            <code class="ruby">  # c.basic_auth_credentials &#39;username&#39;, &#39;password&#39;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="16">
+            
+
+            
+
+            <code class="ruby">end</code>
+          </li>
+        </div>
+      
+    </ol>
+  </pre>
+</div>
+
+      
         <div class="source_table" id="6a2628e47a8adfc573c5c94f7415c752438c1209">
   <div class="header">
     <h3>config/routes.rb</h3>
@@ -7987,8 +8379,8 @@
     
 
     <div class="t-line-summary">
-      <b>13</b> relevant lines.
-      <span class="green"><b>13</b> lines covered</span> and
+      <b>15</b> relevant lines.
+      <span class="green"><b>15</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
 
@@ -8019,27 +8411,31 @@
 
             
 
+            <code class="ruby">  mount Rswag::Ui::Engine =&gt; &#39;/api-docs&#39;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="3">
+            
+              <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  mount Rswag::Api::Engine =&gt; &#39;/api-docs&#39;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="4">
+            
+              <span class="hits">1</span>
+            
+
+            
+
             <code class="ruby">  devise_for :users, controllers: { sessions: &#39;sessions&#39; }</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="3">
-            
-
-            
-
-            <code class="ruby">  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="4">
-            
-
-            
-
-            <code class="ruby"></code>
           </li>
         </div>
       
@@ -8049,7 +8445,7 @@
 
             
 
-            <code class="ruby">  # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.</code>
+            <code class="ruby">  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html</code>
           </li>
         </div>
       
@@ -8059,12 +8455,32 @@
 
             
 
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="7">
+            
+
+            
+
+            <code class="ruby">  # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="8">
+            
+
+            
+
             <code class="ruby">  # Can be used by load balancers and uptime monitors to verify that the app is live.</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="7">
+          <li class="covered" data-hits="1" data-linenumber="9">
             
               <span class="hits">1</span>
             
@@ -8076,32 +8492,12 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="8">
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="9">
-            
-
-            
-
-            <code class="ruby">  # Defines the root path route (&quot;/&quot;)</code>
-          </li>
-        </div>
-      
-        <div>
           <li class="never" data-hits="" data-linenumber="10">
             
 
             
 
-            <code class="ruby">  # root &quot;posts#index&quot;</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -8111,31 +8507,27 @@
 
             
 
+            <code class="ruby">  # Defines the root path route (&quot;/&quot;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="12">
+            
+
+            
+
+            <code class="ruby">  # root &quot;posts#index&quot;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="13">
+            
+
+            
+
             <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="12">
-            
-              <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">  get &#39;admin/active_projects&#39;, to: &#39;admins#active_projects&#39;</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="13">
-            
-              <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">  post &#39;/admin/update_project_users&#39;, to: &#39;admins#update_project_users&#39;</code>
           </li>
         </div>
       
@@ -8147,7 +8539,7 @@
 
             
 
-            <code class="ruby">  get &#39;admin/project_task_duration/:project_id&#39;, to: &#39;admins#project_task_duration&#39;</code>
+            <code class="ruby">  get &#39;admin/active_projects&#39;, to: &#39;admins#active_projects&#39;</code>
           </li>
         </div>
       
@@ -8159,7 +8551,7 @@
 
             
 
-            <code class="ruby">  get &#39;admin/users&#39;, to: &#39;admins#users&#39;</code>
+            <code class="ruby">  post &#39;/admin/update_project_users&#39;, to: &#39;admins#update_project_users&#39;</code>
           </li>
         </div>
       
@@ -8171,12 +8563,36 @@
 
             
 
+            <code class="ruby">  get &#39;admin/project_task_duration/:project_id&#39;, to: &#39;admins#project_task_duration&#39;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="17">
+            
+              <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  get &#39;admin/users&#39;, to: &#39;admins#users&#39;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="18">
+            
+              <span class="hits">1</span>
+            
+
+            
+
             <code class="ruby">  get &#39;admin/user_projects_and_tasks/:id&#39;, to: &#39;admins#user_projects_and_tasks&#39;</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="17">
+          <li class="never" data-hits="" data-linenumber="19">
             
 
             
@@ -8186,36 +8602,12 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="18">
+          <li class="never" data-hits="" data-linenumber="20">
             
 
             
 
             <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="19">
-            
-              <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">  get &#39;user/projects&#39;, to: &#39;users#projects&#39;</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="20">
-            
-              <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">  post &#39;user/tasks&#39;, to: &#39;users#add_task&#39;</code>
           </li>
         </div>
       
@@ -8227,7 +8619,7 @@
 
             
 
-            <code class="ruby">  get &#39;user/tasks&#39;, to: &#39;users#tasks&#39;</code>
+            <code class="ruby">  get &#39;user/projects&#39;, to: &#39;users#projects&#39;</code>
           </li>
         </div>
       
@@ -8239,17 +8631,19 @@
 
             
 
-            <code class="ruby">  get &#39;/user/me&#39;, to: &#39;users#me&#39;</code>
+            <code class="ruby">  post &#39;user/tasks&#39;, to: &#39;users#add_task&#39;</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="23">
+          <li class="covered" data-hits="1" data-linenumber="23">
+            
+              <span class="hits">1</span>
             
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">  get &#39;user/tasks&#39;, to: &#39;users#tasks&#39;</code>
           </li>
         </div>
       
@@ -8261,12 +8655,34 @@
 
             
 
-            <code class="ruby">  resources :projects, only: [:index, :create, :update, :destroy]</code>
+            <code class="ruby">  get &#39;/user/me&#39;, to: &#39;users#me&#39;</code>
           </li>
         </div>
       
         <div>
           <li class="never" data-hits="" data-linenumber="25">
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="26">
+            
+              <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  resources :projects, only: [:index, :create, :update, :destroy]</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="27">
             
 
             

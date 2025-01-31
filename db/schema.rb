@@ -46,9 +46,11 @@ ActiveRecord::Schema[7.1].define(version: 2025_01_30_003024) do
     t.datetime "end_time"
     t.integer "duration"
     t.bigint "project_id"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["project_id"], name: "index_tasks_on_project_id"
+    t.index ["user_id"], name: "index_tasks_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -69,5 +71,4 @@ ActiveRecord::Schema[7.1].define(version: 2025_01_30_003024) do
 
   add_foreign_key "projects_users", "projects"
   add_foreign_key "projects_users", "users"
-  add_foreign_key "tasks", "projects"
 end

@@ -508,6 +508,44 @@
           null
         ]
       },
+      "/home/asus/test_task/project_management_backend/config/initializers/rswag_api.rb": {
+        "lines": [
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/home/asus/test_task/project_management_backend/config/initializers/rswag_ui.rb": {
+        "lines": [
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
       "/home/asus/test_task/project_management_backend/spec/factories/projects.rb": {
         "lines": [
           1,
@@ -565,6 +603,8 @@
       },
       "/home/asus/test_task/project_management_backend/config/routes.rb": {
         "lines": [
+          1,
+          1,
           1,
           1,
           null,
@@ -1126,6 +1166,6 @@
         ]
       }
     },
-    "timestamp": 1738312204
+    "timestamp": 1738334779
   }
 }

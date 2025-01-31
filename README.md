@@ -1,7 +1,4 @@
-Here’s a more styled and visually appealing README for your project:
-
-```markdown
-# Project Management
+## Project Management
 
 A project management system with user roles, project tracking, and task management capabilities. The
 application will include backend setup using Rails with API endpoints and

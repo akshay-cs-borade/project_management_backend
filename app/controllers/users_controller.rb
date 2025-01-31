@@ -26,6 +26,10 @@ class UsersController < ApplicationController
       render json: { error: task.errors.full_messages }, status: :unprocessable_entity
     end
   end
+
+  def me
+    render json: { id: current_user.id, name: current_user.name, email: current_user.email }
+  end
   
   private
 

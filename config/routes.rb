@@ -19,4 +19,7 @@ Rails.application.routes.draw do
   get 'user/projects', to: 'users#projects'
   post 'user/tasks', to: 'users#add_task'
   get 'user/tasks', to: 'users#tasks'
+  get '/user/me', to: 'users#me'
+
+  resources :projects, only: [:index, :create, :update, :destroy]
 end

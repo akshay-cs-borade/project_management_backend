@@ -10,6 +10,10 @@
 admin = User.create(name: 'Admin User', email: 'admin@example.com', password: 'password', role: :admin)
 user = User.create(name: 'Regular User', email: 'user@example.com', password: 'password', role: :user)
 
+(1..5).each do |i|
+  User.create(name: "Regular User #{i}", email: "user#{i}@example.com", password: 'password', role: :user)
+end
+
 project1 = Project.create(name: 'Website Development', start_date: Date.today, duration: 7)
 project2 = Project.create(name: 'Mobile App Development', start_date: Date.today - 3, duration: 10)
 

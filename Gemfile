@@ -43,9 +43,11 @@ end
 group :development do
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
+  gem "pry"
 end
 
 gem 'rspec-rails', group: [:development, :test]
 gem 'devise'
 gem 'devise-jwt'
 gem 'jwt'
+gem 'rack-cors'

@@ -7,3 +7,11 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+admin = User.create(name: 'Admin User', email: 'admin@example.com', password: 'password', role: :admin)
+user = User.create(name: 'Regular User', email: 'user@example.com', password: 'password', role: :user)
+
+project1 = Project.create(name: 'Website Development', start_date: Date.today, duration: 7)
+project2 = Project.create(name: 'Mobile App Development', start_date: Date.today - 3, duration: 10)
+
+ProjectsUser.create(user: admin, project: project1)
+ProjectsUser.create(user: user, project: project2)
